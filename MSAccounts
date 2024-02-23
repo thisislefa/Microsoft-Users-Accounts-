@@ -1,0 +1,29 @@
+# Initialize a new Git repository
+git init
+
+# Create a README file
+echo "# Adding User Account on Windows" >> README.md
+
+# Create a batch script to add user account
+echo "
+@echo off
+set /p username=Enter username: 
+set /p password=Enter password: 
+net user %username% %password% /add
+echo User account created successfully!
+pause" >> add_user_account.bat
+
+# Add the files to the staging area
+git add .
+
+# Commit the changes
+git commit -m "Added user account script"
+
+# Create a new repository on GitHub
+# Add your repository details here
+
+# Add the URL of your remote repository
+git remote add origin <repository URL>
+
+# Push the local repository to GitHub
+git push -u origin master
